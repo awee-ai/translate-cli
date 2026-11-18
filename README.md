@@ -31,10 +31,12 @@ Every release carries `checksums.txt`, signed with cosign.
 
 ```sh
 translate init                   # or: translate init --from crowdin.yml
-export AWEE_TRANSLATE_TOKEN=...  # the app's API key
+export AWEE_TRANSLATE_TOKEN=...  # your personal key, or an organization key
 translate push sources
 translate push translations
 translate pull translations
 ```
+
+The token is an API key from the app's API keys page. A personal key acts as you, so it reaches the projects you picked when you made it and does what your role on each of them allows. A read-only personal key pulls and never pushes. An organization key, made by an admin, holds a role of its own such as `publisher` and keeps working when people leave, which suits CI.
 
 Run `translate --help` for every command and flag.
